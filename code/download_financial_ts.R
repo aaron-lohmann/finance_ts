@@ -34,7 +34,7 @@ library(dplyr)
 # example symbolvec for Apple and Tesla: 
 # symbolvec <- c("AAPL","TSLA")
 
-symbolvec <- c("MSCI", "BTC-USD", "AAPL", "HG=F")
+symbolvec <- c("MSCI",  "AAPL", "HG=F")
 
 # example start date: "2018-06-07" format: "yyyy-mm-dd"
 # Advice: Leave this at "1900-01-01" . This seems to lead to longest available
@@ -54,7 +54,6 @@ type <- "Close"
 # downloaded
 
 
-financial_ts(symbolvec, startdate, type)
 
 ###############################################################################
 ################### Now set the working directory #############################
@@ -88,9 +87,9 @@ financial_ts(symbolvec, startdate, type)
   
   final_xts <- xts(combined_series[,-1],order.by = index(symbolData[[1]]))
   
-  level_plot_name <- "level_"
-  return_plot_name <- "logreturn_"
-  csv_name <- "time_series_"
+  level_plot_name <- "../figures/level_"
+  return_plot_name <- "../figures/logreturn_"
+  csv_name <- "../data/time_series_"
   
   # create plot names
   
